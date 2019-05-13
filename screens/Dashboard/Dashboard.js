@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
-import SvgUri from 'react-native-svg-uri';
-import { Header } from 'react-native-elements';
+import HeaderComponent from '../../components/Header';
+import { config } from '../../utils';
 
 export default class Dashboard extends Component {
     render() {
+        config.routeName = this.props.navigation.state.key;
         return (
             <View style={styles.container}>
-                <Header
-                    placement="left"
-                    leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{
-                        text: 'LearnIT',
-                        style: { color: '#fff', fontSize: 18 },
-                    }}
-                    rightComponent={{ icon: 'home', color: '#fff' }}
-                />
+                <HeaderComponent {...this.props} />
                 <ScrollView>
                     <View style={styles.profileContainer}>
                         <Image

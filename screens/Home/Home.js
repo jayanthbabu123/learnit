@@ -13,6 +13,9 @@ export default class Home extends Component {
             size: { width, height },
         };
     }
+    handleLogin = () => {
+        this.props.navigation.navigate('Dashboard')
+    }
     _onLayoutDidChange = (e) => {
         const layout = e.nativeEvent.layout;
         this.setState({ size: { width: layout.width, height: layout.height } });
@@ -57,6 +60,7 @@ export default class Home extends Component {
                             iconRight
                             buttonStyle={{ justifyContent: 'center', width: 150 }}
                             title="Login"
+                            onPress={() => this.handleLogin()}
                         />
                     </View>
 
@@ -86,6 +90,7 @@ export default class Home extends Component {
                             iconRight
                             buttonStyle={{ justifyContent: 'center', width: 150 }}
                             title="Login"
+                            onPress={() => this.handleLogin()}
                         />
                     </View>
                     <View style={[{
@@ -115,6 +120,7 @@ export default class Home extends Component {
                             iconRight
                             buttonStyle={{ justifyContent: 'center', width: 150 }}
                             title="Login"
+                            onPress={() => this.handleLogin()}
                         />
                     </View>
                     <View style={[{
@@ -143,7 +149,7 @@ export default class Home extends Component {
                             iconRight
                             buttonStyle={{ justifyContent: 'center', width: 150 }}
                             title="Login"
-                            onPress={() => navigate('Dashboard', { name: 'Jane' })}
+                            onPress={() => this.handleLogin()}
                         />
 
                     </View>
